@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "tb_veiculos")
-public class VeiculosModel {
+public class VeiculoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,5 +19,5 @@ public class VeiculosModel {
 
     @ManyToOne
     @JoinColumn(name = "id_titular")
-    private TitularModel titularModel;
+    private TitularModel titular;
 }
