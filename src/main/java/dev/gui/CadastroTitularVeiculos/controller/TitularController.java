@@ -36,4 +36,9 @@ public class TitularController {
         titularService.deletarTitular(id);
     }
 
+    @PutMapping("/alterar/{id}")
+    public TitularModel alterarInfoTitular(@PathVariable Long id, @RequestBody TitularModel titularModel){
+        return titularService.alterarInfoTitular(id, titularModel);
+    }
+
 }

@@ -34,4 +34,12 @@ public class TitularService {
         titularRepository.deleteById(id);
     }
 
+    public TitularModel alterarInfoTitular(Long id, TitularModel titularModel){
+      if(titularRepository.existsById(id)){
+          titularModel.setId(id);
+          return titularRepository.save(titularModel);
+      }
+      return null;
+    }
+
 }

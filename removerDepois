@@ -8,7 +8,6 @@
     }
 
     {
-        "id": 1,
         "nome": "Valmir",
         "email": "valmir@email.com",
         "idade": 60,
