@@ -19,4 +19,8 @@ public class TitularService {
         List<TitularModel> titulares = titularRepository.findAll();
         return titulares;
     }
+
+    public TitularModel criarTitular(TitularModel titularModel){
+        return titularRepository.save(titularModel);
+    }
 }

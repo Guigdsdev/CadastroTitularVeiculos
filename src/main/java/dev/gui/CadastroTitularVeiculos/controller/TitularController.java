@@ -2,9 +2,7 @@ package dev.gui.CadastroTitularVeiculos.controller;
 
 import dev.gui.CadastroTitularVeiculos.domain.TitularModel;
 import dev.gui.CadastroTitularVeiculos.service.TitularService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,10 @@ public class TitularController {
     @GetMapping("/listar")
     public List<TitularModel> listarTitulares(){
         return titularService.listarTitulares();
+    }
+
+    @PostMapping("/criar")
+    public TitularModel criarTitular(@RequestBody TitularModel titularModel){
+        return titularService.criarTitular(titularModel);
     }
 }
