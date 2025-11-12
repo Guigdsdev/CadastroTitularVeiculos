@@ -1,0 +1,18 @@
+    {
+        "nome": "Robson",
+        "email": "robson@email.com",
+        "idade": 20,
+        "numeracaoCarteira": 8040,
+        "endereco": "Rua valmir",
+        "veiculos": []
+    }
+
+    {
+        "id": 1,
+        "nome": "Valmir",
+        "email": "valmir@email.com",
+        "idade": 60,
+        "numeracaoCarteira": 3020,
+        "endereco": "Rua valmir",
+        "veiculos": []
+    }

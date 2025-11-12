@@ -25,4 +25,9 @@ public class TitularController {
     public TitularModel criarTitular(@RequestBody TitularModel titularModel){
         return titularService.criarTitular(titularModel);
     }
+
+    @GetMapping("/listar/{id}")
+    public TitularModel listarTitularId(@PathVariable Long id){
+        return titularService.listarTitularId(id);
+    }
 }

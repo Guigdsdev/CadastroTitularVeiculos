@@ -5,6 +5,7 @@ import dev.gui.CadastroTitularVeiculos.repository.TitularRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TitularService {
@@ -22,5 +23,10 @@ public class TitularService {
 
     public TitularModel criarTitular(TitularModel titularModel){
         return titularRepository.save(titularModel);
+    }
+
+    public TitularModel listarTitularId(Long id){
+        Optional<TitularModel> titularId = titularRepository.findById(id);
+        return titularId.orElse(null);
     }
 }
