@@ -30,4 +30,10 @@ public class TitularController {
     public TitularModel listarTitularId(@PathVariable Long id){
         return titularService.listarTitularId(id);
     }
+
+    @DeleteMapping("/deletar/{id}")
+    public void deletarTitular(@PathVariable Long id){
+        titularService.deletarTitular(id);
+    }
+
 }

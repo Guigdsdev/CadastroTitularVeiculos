@@ -29,4 +29,9 @@ public class TitularService {
         Optional<TitularModel> titularId = titularRepository.findById(id);
         return titularId.orElse(null);
     }
+
+    public void deletarTitular(Long id){
+        titularRepository.deleteById(id);
+    }
+
 }
