@@ -1,45 +1,53 @@
 package dev.gui.CadastroTitularVeiculos.service;
 
+import dev.gui.CadastroTitularVeiculos.DTOs.TitularDTO;
 import dev.gui.CadastroTitularVeiculos.domain.TitularModel;
+import dev.gui.CadastroTitularVeiculos.mappers.MapperTitular;
 import dev.gui.CadastroTitularVeiculos.repository.TitularRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class TitularService {
 
     private final TitularRepository titularRepository;
+    private final MapperTitular mapper;
 
-    public TitularService(TitularRepository titularRepository) {
+    public TitularService(TitularRepository titularRepository, MapperTitular mapper) {
         this.titularRepository = titularRepository;
+        this.mapper = mapper;
     }
 
-    public List<TitularModel> listarTitulares(){
+    public List<TitularDTO> listarTitulares(){
         List<TitularModel> titulares = titularRepository.findAll();
-        return titulares;
+        return titulares.stream().map(mapper::map).collect(Collectors.toList());
     }
 
-    public TitularModel criarTitular(TitularModel titularModel){
-        return titularRepository.save(titularModel);
+    public TitularDTO criarTitular(TitularDTO titularDTO){
+        TitularModel titular = mapper.map(titularDTO);
+        titularRepository.save(titular);
+        return mapper.map(titular);
     }
 
-    public TitularModel listarTitularId(Long id){
+    public TitularDTO listarTitularId(Long id){
         Optional<TitularModel> titularId = titularRepository.findById(id);
-        return titularId.orElse(null);
+        return titularId.map(mapper::map).orElse(null);
     }
 
-    public void deletarTitular(Long id){
-        titularRepository.deleteById(id);
+    public TitularDTO deletarTitular(Long id){
+        if(titularRepository.existsById(id)) {
+            titularRepository.deleteById(id);
+        }
+        return null;
     }
 
-    public TitularModel alterarInfoTitular(Long id, TitularModel titularModel){
-      if(titularRepository.existsById(id)){
-          titularModel.setId(id);
-          return titularRepository.save(titularModel);
-      }
-      return null;
+    public TitularDTO alterarInfoTitular(Long id, TitularDTO titularDTO){
+        Optional<TitularModel> titular = titularRepository.findById(id);
+        titular.get().setId(id);
+      return titular.map(mapper::map).orElse(null);
     }
 
 }

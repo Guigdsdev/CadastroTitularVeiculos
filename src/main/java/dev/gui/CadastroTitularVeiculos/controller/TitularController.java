@@ -1,5 +1,6 @@
 package dev.gui.CadastroTitularVeiculos.controller;
 
+import dev.gui.CadastroTitularVeiculos.DTOs.TitularDTO;
 import dev.gui.CadastroTitularVeiculos.domain.TitularModel;
 import dev.gui.CadastroTitularVeiculos.service.TitularService;
 import org.springframework.web.bind.annotation.*;
@@ -17,17 +18,17 @@ public class TitularController {
     }
 
     @GetMapping("/listar")
-    public List<TitularModel> listarTitulares(){
+    public List<TitularDTO> listarTitulares(){
         return titularService.listarTitulares();
     }
 
     @PostMapping("/criar")
-    public TitularModel criarTitular(@RequestBody TitularModel titularModel){
-        return titularService.criarTitular(titularModel);
+    public TitularDTO criarTitular(@RequestBody TitularDTO titularDTO){
+        return titularService.criarTitular(titularDTO);
     }
 
     @GetMapping("/listar/{id}")
-    public TitularModel listarTitularId(@PathVariable Long id){
+    public TitularDTO listarTitularId(@PathVariable Long id){
         return titularService.listarTitularId(id);
     }
 
@@ -37,8 +38,8 @@ public class TitularController {
     }
 
     @PutMapping("/alterar/{id}")
-    public TitularModel alterarInfoTitular(@PathVariable Long id, @RequestBody TitularModel titularModel){
-        return titularService.alterarInfoTitular(id, titularModel);
+    public TitularDTO alterarInfoTitular(@PathVariable Long id, @RequestBody TitularDTO titularDTO){
+        return titularService.alterarInfoTitular(id, titularDTO);
     }
 
 }
