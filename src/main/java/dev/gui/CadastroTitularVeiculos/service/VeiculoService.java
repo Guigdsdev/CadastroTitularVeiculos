@@ -6,6 +6,7 @@ import dev.gui.CadastroTitularVeiculos.mappers.MapperVeiculo;
 import dev.gui.CadastroTitularVeiculos.repository.VeiculoRepository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class VeiculoService {
@@ -28,5 +29,18 @@ public class VeiculoService {
         veiculo = mapperVeiculo.map(veiculoDTO);
         veiculoRepository.save(veiculo);
         return mapperVeiculo.map(veiculo);
+    }
+
+    public VeiculoDTO listarVeiculoId(Long id){
+        Optional<VeiculoModel> veiculo= veiculoRepository.findById(id);
+        return veiculo.map(mapperVeiculo::map).orElse(null);
+    }
+
+    public VeiculoDTO removerVeiculo(Long id){
+        VeiculoDTO veiculo = listarVeiculoId(id);
+        if(veiculo != null) {
+            veiculoRepository.deleteById(id);
+        }
+        return null;
     }
 }
