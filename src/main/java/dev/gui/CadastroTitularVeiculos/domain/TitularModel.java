@@ -1,9 +1,11 @@
 package dev.gui.CadastroTitularVeiculos.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.util.List;
 
@@ -12,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "tb_titular")
+@ToString
 public class TitularModel {
 
     @Id
@@ -34,5 +37,6 @@ public class TitularModel {
     private String endereco;
 
     @OneToMany(mappedBy = "titular")
+    @JsonIgnore
     private List<VeiculoModel> veiculos;
 }

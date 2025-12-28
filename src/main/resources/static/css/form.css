@@ -1,0 +1,130 @@
+/* ========== RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ========== FUNDO E CENTRALIZAÇÃO ========== */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f172a; /* azul escuro elegante */
+}
+
+.back-link {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px;   /* distância do rodapé — pode mudar para 0 */
+    left: 0;
+    margin-left: 0;
+    padding-left: 10px;
+    color: #93c5fd;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: 0.2s;
+    background: linear-gradient(135deg,#2563eb,#1d4ed8);
+}
+
+.back-link:hover {
+    text-decoration: underline;
+    color: #bfdbfe;
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+}
+
+/* ========== CONTAINER DO FORMULÁRIO ========== */
+.form-container {
+    width: 100%;
+    max-width: 420px;
+    background: #020617; /* quase preto */
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 0 35px rgba(0,0,0,.45);
+    color: #e5e7eb;
+}
+
+/* ========== FORMULÁRIO ========== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ========== LABELS ========== */
+label {
+    font-size: 0.9rem;
+    color: #cbd5f5;
+}
+
+/* ========== INPUTS ========== */
+input {
+    background: #020617;
+    border: 1px solid #1f2937;
+    padding: 10px 12px;
+    color: #f9fafb;
+    border-radius: 8px;
+    outline: none;
+    transition: .25s ease;
+}
+
+/* foco */
+input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59,130,246,.25);
+}
+
+/* placeholder opcional */
+input::placeholder {
+    color: #6b7280;
+}
+
+/* ========== BOTÃO ========== */
+button {
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(135deg,#2563eb,#1d4ed8);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: .5px;
+    transition: .25s ease;
+}
+
+/* hover */
+button:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+}
+
+/* ========== MENSAGEM ========== */
+.mensagem {
+    margin-bottom: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(16,185,129,.1);
+    color: #6ee7b7;
+    border: 1px solid rgba(16,185,129,.3);
+}
+
+/* erro opcional */
+.mensagem.error {
+    background: rgba(239,68,68,.12);
+    border-color: rgba(239,68,68,.4);
+    color: #fca5a5;
+}
+
+/* ========== RESPONSIVO ========== */
+@media (max-width: 480px) {
+    div {
+        max-width: 92%;
+        padding: 22px;
+    }
+}

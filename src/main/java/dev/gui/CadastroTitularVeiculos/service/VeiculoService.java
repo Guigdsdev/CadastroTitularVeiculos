@@ -4,11 +4,13 @@ import dev.gui.CadastroTitularVeiculos.DTOs.VeiculoDTO;
 import dev.gui.CadastroTitularVeiculos.domain.VeiculoModel;
 import dev.gui.CadastroTitularVeiculos.mappers.MapperVeiculo;
 import dev.gui.CadastroTitularVeiculos.repository.VeiculoRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+@Service
 public class VeiculoService {
 
     private final VeiculoRepository veiculoRepository;
@@ -25,8 +27,8 @@ public class VeiculoService {
     }
 
     public VeiculoDTO criarVeiculo(VeiculoDTO veiculoDTO){
-        VeiculoModel veiculo = new VeiculoModel();
-        veiculo = mapperVeiculo.map(veiculoDTO);
+        System.out.println("VEICULO ->" + veiculoDTO);
+        VeiculoModel veiculo = mapperVeiculo.map(veiculoDTO);
         veiculoRepository.save(veiculo);
         return mapperVeiculo.map(veiculo);
     }

@@ -16,6 +16,7 @@ public class MapperVeiculo {
         veiculoModel.setKm(veiculoDTO.getKm());
         veiculoModel.setVelocidadeMaxima(veiculoDTO.getVelocidadeMaxima());
         veiculoModel.setImgUrl(veiculoDTO.getImgUrl());
+        veiculoModel.setTitular(veiculoDTO.getTitular());
         return veiculoModel;
     }
 
@@ -28,6 +29,7 @@ public class MapperVeiculo {
         veiculoDTO.setKm(veiculoModel.getKm());
         veiculoDTO.setVelocidadeMaxima(veiculoModel.getVelocidadeMaxima());
         veiculoDTO.setImgUrl(veiculoModel.getImgUrl());
+        veiculoDTO.setTitular(veiculoModel.getTitular());
         return veiculoDTO;
     }
 

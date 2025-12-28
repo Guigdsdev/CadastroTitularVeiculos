@@ -1,0 +1,101 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Corpo da página */
+body {
+    background: #0f172a;
+    padding: 20px;
+    color: #e5e7eb;
+}
+
+/* Título */
+h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #e5e7eb;
+}
+
+/* Links de ações */
+a {
+    text-decoration: none;
+    color: #ffffff;
+    background: linear-gradient(135deg,#2563eb,#1d4ed8);
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-right: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+a:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+/* Container da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #020617;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 35px rgba(0,0,0,.45);
+    color: #e5e7eb;
+}
+
+/* Cabeçalho */
+thead {
+    background: #0b1224;
+    color: #e5e7eb;
+}
+
+thead th {
+    padding: 12px;
+    text-align: left;
+}
+
+/* Linhas da tabela */
+tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #1f2937;
+}
+
+/* Zebra stripes */
+tbody tr:nth-child(even) {
+    background: #020617dd;
+}
+
+tbody tr:nth-child(odd) {
+    background: #020617;
+}
+
+/* Linha ao passar o mouse */
+tbody tr:hover {
+    background: #0c1222;
+}
+
+/* Link dentro da tabela */
+td a {
+    background: linear-gradient(135deg,#2563eb,#1d4ed8);
+}
+
+td a:hover {
+    filter: brightness(1.1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    a {
+        margin-bottom: 8px;
+    }
+}

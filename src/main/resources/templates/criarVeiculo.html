@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Adicionar Veiculo</title>
+    <link rel="stylesheet" th:href="@{/css/form.css}">
+</head>
+<body>
+    <div class="form-container">
+        <div class="mensagem" th:if="${mensagem}" th:text="${mensagem}"></div>
+        <form th:action="@{/veiculos/ui/salvar}" th:object="${veiculo}" method="POST">
+            <label for="modelo">Modelo</label>
+            <input id="modelo" type="text" th:field="${veiculo.modelo}" required>
+            <label for="marca">Marca</label>
+            <input id="marca" type="text" th:field="${veiculo.marca}" required>
+            <label for="ano">Ano</label>
+            <input id="ano" type="number" th:field="${veiculo.ano}" required>
+            <label for="km">Km Rodado</label>
+            <input id="km" type="number" th:field="${veiculo.km}" required>
+            <label for="velocidademax">Velocidade Máxima</label>
+            <input id="velocidademax" type="number" th:field="${veiculo.velocidadeMaxima}" required>
+            <label for="imagem">Imagem</label>
+            <input id="imagem" type="text" th:field="${veiculo.imgUrl}" required>
+            <label for="idTitular">ID Titular</label>
+            <input id="idTitular" type="number" th:field="${veiculo.titular.id}" required>
+            <button type="submit">Adicionar Veículo</button>
+        </form>
+    </div>
+    <a class="back-link" th:href="@{/titular/ui/listar}">Voltar</a>
+</body>
+</html>

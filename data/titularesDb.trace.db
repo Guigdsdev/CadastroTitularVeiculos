@@ -1,0 +1,6 @@
+2025-12-27 00:37:39.985982-03:00 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "-- V2: Cria coluna imgUrl na tabela TB_TITULARES\000a\000aALTER TABLE TB_TITULARES\000aADD COLUMN imgUrl[*]"; expected "data type"; SQL statement:
+-- V2: Cria coluna imgUrl na tabela TB_TITULARES
+
+ALTER TABLE TB_TITULARES
+ADD COLUMN imgUrl [42001-232]
